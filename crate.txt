@@ -1,0 +1,6 @@
+description = "Peripheral access API for @NAME@ microcontrollers"
+keywords = ["arm", "cortex-m", "stm32", "svd2rust", "stm32f7"]
+categories = ["embedded", "hardware-support", "no-std"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/jmesmon/stm32f7xx"
+include = ["Cargo.toml", "**/*.rs" ]

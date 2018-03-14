@@ -1,0 +1,19 @@
+[package]
+name = "stm32f7x2"
+version = "0.1.0"
+description = "Peripheral access API for STM32F7x2 microcontrollers"
+keywords = ["arm", "cortex-m", "stm32", "svd2rust", "stm32f7"]
+categories = ["embedded", "hardware-support", "no-std"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/jmesmon/stm32f7xx"
+include = ["Cargo.toml", "**/*.rs" ]
+authors = ["Cody P Schafer <dev@codyps.com>"]
+
+[dependencies]
+bare-metal = "0.1"
+cortex-m = "0.4"
+vcell = "0.1"
+cortex-m-rt = { optional = true, version = "0.3" }
+
+[features]
+rt = ["cortex-m-rt"]

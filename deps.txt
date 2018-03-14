@@ -1,0 +1,7 @@
+bare-metal = "0.1"
+cortex-m = "0.4"
+vcell = "0.1"
+cortex-m-rt = { optional = true, version = "0.3" }
+
+[features]
+rt = ["cortex-m-rt"]
