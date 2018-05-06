@@ -1,6 +1,6 @@
 [package]
 name = "stm32f7x2"
-version = "0.1.0"
+version = "0.2.0"
 description = "Peripheral access API for STM32F7x2 microcontrollers"
 keywords = ["arm", "cortex-m", "stm32", "svd2rust", "stm32f7"]
 categories = ["embedded", "hardware-support", "no-std"]
