@@ -7,7 +7,7 @@ main() {
 	for i in "$d/stm32f7"*; do
 		( 
 		cd "$i"
-		cargo check --target $TARGET
+		cargo check --target $TARGET --verbose
 		)
 	done
 }
