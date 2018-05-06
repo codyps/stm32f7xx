@@ -1,5 +1,6 @@
 dist: trusty
-sudo: false
+# `false`: 4G ram, `required`: 7.5G ram
+sudo: required
 language: rust
 
 matrix:
