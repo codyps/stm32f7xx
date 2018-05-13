@@ -7,6 +7,8 @@ matrix:
   include:
     - env: TARGET=thumbv7em-none-eabihf
       rust: nightly
+    - env: TARGET=thumbv7em-none-eabihf
+      rust: beta
 
 before_install: set -e
 
