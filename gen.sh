@@ -12,11 +12,22 @@ for i in "$d/svd"/*; do
 			cargo new --lib "$d/$l"
 			sed -i "$d/$l/Cargo.toml" \
 				-e '/version/r crate.txt' \
-				-e '/\[dependencies\]/r deps.txt'
+				-e '/\[dependencies\]/r deps.txt' \
+				-e 's/version =.*/version = "0.3.0"/'
+
+			# split because `-e` doesn't affect data inserted in the same invocation
 			sed -i "$d/$l/Cargo.toml" \
 				-e 's/@NAME@/'$b'/g'
 		fi
-		svd2rust -i "$i" | rustfmt >"$d/$l/src/lib.rs"
+		(
+			cp "$i" "$d/$l/svd.svd"
+			cd "$d/$l"
+			svd2rust -i svd.svd
+			rm svd.svd
+			rm -rf src
+			form -i lib.rs -o src && rm lib.rs
+			cargo fmt
+		)
 		;;
 	*)	2>&1 echo "skipping $i"
 	esac

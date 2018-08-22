@@ -3,10 +3,17 @@ dist: trusty
 sudo: required
 language: rust
 
+addons:
+  apt:
+    packages:
+      - gcc-arm-none-eabi
+
 matrix:
   include:
     - env: TARGET=thumbv7em-none-eabihf
       rust: nightly
+    - env: TARGET=thumbv7em-none-eabihf
+      rust: beta
 
 before_install: set -e
 

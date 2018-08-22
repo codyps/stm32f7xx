@@ -1,7 +1,10 @@
-bare-metal = "0.1"
-cortex-m = "0.4"
-vcell = "0.1"
-cortex-m-rt = { optional = true, version = "0.4" }
+bare-metal = "0.2.0"
+cortex-m = "0.5.0"
+vcell = "0.1.0"
+
+[dependencies.cortex-m-rt]
+optional = true
+version = "0.5.0"
 
 [features]
-rt = ["cortex-m-rt"]
+rt = ["cortex-m-rt/device"]
