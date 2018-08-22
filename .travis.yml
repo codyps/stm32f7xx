@@ -3,6 +3,11 @@ dist: trusty
 sudo: required
 language: rust
 
+addons:
+  apt:
+    packages:
+      - gcc-arm-none-eabi
+
 matrix:
   include:
     - env: TARGET=thumbv7em-none-eabihf
